@@ -1,0 +1,20 @@
+LogFileView/
+├── main.py                  # Entry point of the application
+├── views/
+│   ├── main_window.py       # Main application window
+│   ├── field_editor.py      # Field item edit window
+│   ├── field_list.py        # Field definition list window
+│   ├── regex_tester.py      # Regular expression test window
+├── models/
+│   ├── log_model.py         # Model for managing log data
+│   ├── field_model.py       # Model for managing field definitions
+├── controllers/
+│   ├── log_controller.py    # Controller for log-related operations
+│   ├── field_controller.py  # Controller for field-related operations
+├── resources/
+│   ├── icons/               # Icons for the ribbon toolbar
+│   ├── config.json          # Configuration file for saving settings
+├── database/
+│   ├── schema.sql           # SQLite schema for the database
+│   ├── log_viewer.db        # SQLite database file
+└── README.md                # Project documentation

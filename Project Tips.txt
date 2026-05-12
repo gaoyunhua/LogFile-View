@@ -1,0 +1,75 @@
+Project requireemt:(Project Tips.txt)
+
+1. Platform
+    Python
+    QT5
+    Windows base
+    SQLite database
+
+2. Purpose
+    For easily Disassembling/dismounting the log files.
+
+3. Logfile and its format
+    Default try open last opened file.
+    utf-8 support
+    Could have random data and errors
+    File was basicall seperated to lines
+
+
+4. UI config.
+    Has Menu
+    Has ribbon-style toolbar(picture wise able, and tipped). 
+
+5. Code File organized
+    Class base code
+    File word size limit 1000
+    File line limit 200
+    File save to different directory if have different purpose.
+
+6. Data windows show method. 
+    Data was contained in the window
+    Data can be sorted
+    Data can be filtered by fields
+    Filter item can be selected in items from data collection.
+    Field visibility can be controlled, User can select which data column can be displayed.
+    Alway a raw column
+    Click field will activate field item edit window.
+    Field width can be change by drag the field width.
+    Field position can press and dragged.
+    Field name / table data can be displayed in multiple line
+
+7. Field item edit window
+    All definition can be translated to Regular expression and display it.
+    Field can be defined to a fix start/stop position in a log line.
+    Field can be defined to a fix start/stop word in a log line. with lint start/line end char.
+    Field can be defined to Regular expression.
+    when we enter a old field name , it should load the regular exp, position. and words in regexp windows inlude time and raw.
+    Field item can be saved/loaded in database
+
+8. Fields definition list window.
+    A menu/ribbon can activate the Fields definition list window 
+    Display Field Name, Visability, Sorted, regular expression.
+    Click fields definition item will activate field edit window.
+
+
+9. Regular expression test window.
+    User can type regular expression and text example
+    Result text will show exacted result from typed Regexp and text.
+
+10. Data abstract
+    The system should be able display all selected/abstracted data.
+
+11. Config file will save below information
+    All definition for data field regular expression, and its history.
+    Last opened Logfile and directory
+
+
+
+
+
+
+
+
+
+
+
