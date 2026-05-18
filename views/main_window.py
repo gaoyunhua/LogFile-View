@@ -486,6 +486,14 @@ class MainWindow(QMainWindow):
         clipboard.setText(copied_data)
         QMessageBox.information(self, "Success", "Selected data copied to clipboard.")
 
+    def on_search_text_changed(self, text):
+        """Filter rows based on quick search text."""
+        self.proxy_model.setSearchText(text)
+
+    def on_column_filter_applied(self, column_index, allowed_values):
+        """Apply a column filter from the header dropdown."""
+        self.proxy_model.setColumnFilter(column_index, allowed_values)
+
     def apply_filter(self):
         """Apply the filter text to the proxy model."""
         filter_text = self.filter_input.text()

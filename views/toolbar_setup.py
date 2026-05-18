@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QToolBar, QAction, QStyle
+from PyQt5.QtWidgets import QToolBar, QAction, QStyle, QLineEdit, QLabel
 from PyQt5.QtGui import QIcon
 
 def setup_toolbar(main_window):
@@ -40,3 +40,14 @@ def setup_toolbar(main_window):
     filter_settings_action.setToolTip("Define and apply filters")
     filter_settings_action.triggered.connect(main_window.open_filter_settings)
     toolbar.addAction(filter_settings_action)
+
+    # Quick search bar
+    toolbar.addSeparator()
+    search_label = QLabel(" Search: ")
+    toolbar.addWidget(search_label)
+    search_input = QLineEdit(main_window)
+    search_input.setPlaceholderText("Type to filter rows...")
+    search_input.setMaximumWidth(200)
+    search_input.textChanged.connect(main_window.on_search_text_changed)
+    toolbar.addWidget(search_input)
+    main_window.search_input = search_input

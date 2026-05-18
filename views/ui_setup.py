@@ -2,7 +2,7 @@ from PyQt5.QtWidgets import QTableView, QVBoxLayout, QWidget
 from PyQt5.QtCore import Qt
 from models.LogFilterProxyModel import LogFilterProxyModel
 from models.log_table_model import LogTableModel
-from views.custom_header_view import CustomHeaderView
+from views.filterable_header_view import FilterableHeaderView
 
 def setup_ui(main_window):
     central_widget = QWidget()
@@ -19,11 +19,16 @@ def setup_ui(main_window):
     proxy_model.setSourceModel(log_table_model)
 
     table_view.setModel(proxy_model)
+    table_view.setSortingEnabled(True)
+    table_view.setAlternatingRowColors(True)
+    table_view.setStyleSheet("QTableView { alternate-background-color: #f5f5f5; }")
 
-    custom_header = CustomHeaderView(Qt.Horizontal, table_view)
+    custom_header = FilterableHeaderView(Qt.Horizontal, table_view)
     table_view.setHorizontalHeader(custom_header)
     header = table_view.horizontalHeader()
     header.sectionDoubleClicked.connect(main_window.open_field_editor)
+    header.filterApplied.connect(main_window.on_column_filter_applied)
+    header.setSortIndicatorShown(True)
     header.setVisible(True)
     table_view.setHorizontalHeader(header)
     table_view.setWordWrap(True)
